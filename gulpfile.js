@@ -58,7 +58,7 @@ function styles() {
       'node_modules/normalize.css/normalize.css',
       'node_modules/slick-carousel/slick/slick.css',
       'node_modules/magnific-popup/dist/magnific-popup.css',
-      'app/scss/style.scss'])
+      'app/scss/**/*.scss'])
    .pipe(scss({outputStyle: 'compressed'}))
    .pipe(concat('style.min.css'))
    .pipe(autoprefixer({
