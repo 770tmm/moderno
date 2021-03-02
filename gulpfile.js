@@ -41,10 +41,11 @@ function images(){
 
 function scripts(){
    return src([
-      'node_modules/slick-carousel/slick/slick.js',
+      'node_modules/jquery/dist/jquery.js',
       'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
       'node_modules/mixitup/dist/mixitup.js',
-      'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
+      'node_modules/@rateyo/jquery/lib/iife/jquery.rateyo.js',
       'app/js/main.js'
    ])
    .pipe(concat('main.min.js'))
@@ -59,8 +60,10 @@ function styles() {
       'node_modules/normalize.css/normalize.css',
       'node_modules/slick-carousel/slick/slick.css',
       'node_modules/magnific-popup/dist/magnific-popup.css',
-      'app/scss/**/*.scss'])
-   .pipe(scss({outputStyle: 'compressed'}))
+      'node_modules/@rateyo/jquery/lib/iife/jquery.rateyo.css',
+      'app/scss/**/*.scss'
+   ])
+   .pipe(scss({outputStyle: 'expanded'}))
    .pipe(concat('style.min.css'))
    .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions'],
